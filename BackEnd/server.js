@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
+require('dotenv').config();
 
 // Middleware pour CORS
 app.use(cors());
@@ -12,14 +13,13 @@ const mainRoutes = require('./routes/mainRoutes');
 const faqRoutes = require('./routes/faqRoutes');
 
 // URI de connexion MongoDB Atlas
-const uri =
-  'mongodb+srv://theodoredeconinck:mGxZbVaKtHE4ZVgv@ovbcluster.xqq8l.mongodb.net/?retryWrites=true&w=majority&appName=OVBCluster';
+const mongoUri = process.env.MONGODB_URI;
 
 // Fonction pour se connecter à MongoDB Atlas avec Mongoose
 const connectDB = async () => {
   try {
     // Connexion avec Mongoose
-    await mongoose.connect(uri, {
+    await mongoose.connect(mongoUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -35,7 +35,7 @@ const connectDB = async () => {
 
 // Fonction de ping pour vérifier que la connexion fonctionne
 const pingAtlas = async () => {
-  const client = new MongoClient(uri, {
+  const client = new MongoClient(mongoUri, {
     serverApi: {
       version: ServerApiVersion.v1,
       strict: true,
@@ -59,7 +59,7 @@ const pingAtlas = async () => {
 connectDB();
 pingAtlas();
 
-const port = process.env.PORT || 5000; // Si Heroku ne définit pas de port, utilise 5000 en local
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
