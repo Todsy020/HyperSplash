@@ -7,7 +7,7 @@ export const Faq = () => {
   const [faq, setFaq] = useState([])
 
   useEffect (() => {
-      fetch('http://localhost:5000/api/faq')
+      fetch('https://hypersplash-back.onrender.com/api/faq')
       .then((response) => response.json())
       .then((data) => setFaq(data))
       .catch((err) => console.log(err))

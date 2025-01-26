@@ -19,10 +19,7 @@ const mongoUri = process.env.MONGODB_URI;
 const connectDB = async () => {
   try {
     // Connexion avec Mongoose
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(mongoUri);
     console.log('Successfully connected to MongoDB Atlas');
 
     // Utilisation des routes
@@ -59,7 +56,7 @@ const pingAtlas = async () => {
 connectDB();
 pingAtlas();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

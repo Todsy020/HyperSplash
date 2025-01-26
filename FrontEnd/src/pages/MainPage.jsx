@@ -26,7 +26,7 @@ const MobileAlert = () => {
   };
   MobileAlert();
   useEffect(() => {
-    fetch('http://localhost:5000/api/mainpage')
+    fetch('https://hypersplash-back.onrender.com/api/mainpage')
       .then((response) => response.json())
       .then((data) => {
         setReviews(data.reviews);
