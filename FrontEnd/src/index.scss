@@ -1,0 +1,125 @@
+@use 'sass:list';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: FuturaBlackBold;
+    src: url(/fonts/FuturaBlackBold.ttf);
+}
+
+@font-face {
+    font-family: FuturiBlackRegular;
+    src: url(/fonts/FuturiBlackRegular.ttf);
+}
+
+@font-face {
+    font-family: SuperFestival;
+    src: url(/fonts/SuperFestival.ttf);
+}
+
+@font-face {
+    font-family: PolySans;
+    src: url(/fonts/PolySansNeutral.ttf);
+}
+
+@font-face {
+    font-family: ObviouslyNarrow-Bold;
+    src: url(/fonts/ObviouslyNarrow-Bold.otf);
+}
+
+
+  .navbar-hidden {
+      transform: translateY(-100%);
+      transition: transform 0.5s ease-in-out;
+  }
+
+ .navbar-visible {
+     transform: translateY(0);
+     transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+
+     &:hover {
+         background-color: black;
+     }
+ }
+            //LIQUID BUTTON
+.liquid {
+    background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1s ease-in;
+
+    &:hover {
+        color:white;
+        background-position: 500% 100%;
+    }}
+        //MULTICOLOR BAND
+
+        #textBox {
+            max-width: 70%;
+            display: block;
+            color: whitesmoke;
+            height: auto;
+            margin: 0 auto;
+            line-height: 150%;
+            font-size: calc(5px + 4vw);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+    
+            .textSec {
+                margin: 0 15px 0 15px;
+    
+                span {
+                    transition: all 0.1s ease;
+                    margin: .5px;
+                    -webkit-filter: brightness(120%);
+                    filter: brightness(120%)
+                }
+            }
+        }
+
+                // GLOWING KEY WORDS :
+        
+                $r : 10px; // glow radius
+                $o : 0.5px; // glow offset
+                $d : 3s; // duration
+                $chars : 7; // # of letters
+                $bg : #111; // background color
+                $c : cyan yellow tomato;
+        
+        
+                .glowing {
+                    animation: glow $d ease-in-out both infinite;
+        
+                    @for $i from 1 through $chars {
+                        &:nth-child(#{$i}) {
+                            animation-delay: calc($i/$chars) * -$d;
+                        }
+                    }
+                }
+        
+                @mixin glow($c1, $c2, $c3) {
+                    text-shadow:
+                        0 0 calc($r/6) snow,
+                        0 (-$o) $r $c3,
+                        (-$o) $o $r $c2,
+                        $o $o $r $c3;
+                }
+        
+                @keyframes glow {
+        
+                    0%,
+                    100% {
+                        @include glow(list.nth($c, 1), list.nth($c, 2), list.nth($c, 3));
+                    }
+        
+                    33% {
+                        @include glow(list.nth($c, 2), list.nth($c, 3), list.nth($c, 1));
+                    }
+        
+                    66% {
+                        @include glow(list.nth($c, 3), list.nth($c, 1), list.nth($c, 2));
+                    }
+                }
