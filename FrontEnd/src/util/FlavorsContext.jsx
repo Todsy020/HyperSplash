@@ -7,7 +7,7 @@ export const FlavorsProvider = ({ children }) => {
   const [flavors, setFlavors] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/mainpage')
+    fetch('https://hypersplash-back.onrender.com/api/mainpage')
       .then((response) => response.json())
       .then((data) => {
         setFlavors(data.flavors);
