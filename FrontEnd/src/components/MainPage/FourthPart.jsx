@@ -7,8 +7,10 @@ export const FourthPart = ({reviews, flavorsImages}) => {
   return (
     <div className=" flex flex-col justify-center">
       <p className="text-4xl text-center font-FuturiBlackRegular">
-        They tasted it and <span className="font-SuperFestival text-pink-600 glowing">LOVED</span> it , so why shouldn&apos;t you?</p>
-      <Reviews reviews={reviews} />
+        They tried it and they <span className="font-SuperFestival text-pink-600 glowing">LOVED</span> it, why shouldn&apos;t you?</p>
+      <div className="flex justify-center">
+        <Reviews reviews={reviews} />
+        </div>
       <InfiniteScroll2 flavorsImages={flavorsImages} />
     </div>
   )

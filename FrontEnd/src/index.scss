@@ -48,7 +48,7 @@
     background-image: url(https://web.archive.org/web/20160312084140im_/http://splatoon.nintendo.com/assets/img/nav-bg-fill-blue.png?1443460871);
     background-repeat: repeat-x;
     background-position: 0 -100%;
-    transition: 1s ease-in;
+    transition: 0.6s ease-in;
 
     &:hover {
         color:white;
@@ -62,17 +62,17 @@
             color: whitesmoke;
             height: auto;
             margin: 0 auto;
-            line-height: 150%;
+            line-height: 140%;
             font-size: calc(5px + 4vw);
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
     
             .textSec {
-                margin: 0 15px 0 15px;
+                margin: 0 10px 0 10px;
     
                 span {
-                    transition: all 0.1s ease;
+                    transition: all .5s ease;
                     margin: .5px;
                     -webkit-filter: brightness(120%);
                     filter: brightness(120%)

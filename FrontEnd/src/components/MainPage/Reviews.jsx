@@ -7,13 +7,13 @@ export const Reviews = ({reviews}) => {
 
   return (
     <motion.div 
-      className="flex w-4/5 mx-auto mb-20 mt-5"
+      className="flex w-4/5 mx-auto mb-20 mt-5 justify-center"
     >
       <motion.div 
-        className="flex"
+        className="flex justify-center"
         style={{ x }} // Applique la valeur de translation
         drag="x" // Active le drag horizontal
-        dragConstraints={{ left: -1000, right: 0 }} // Ajuste en fonction du nombre d'avis
+        dragConstraints={{ left: -350, right: 350 }} // Ajuste en fonction du nombre d'avis
         >
         {reviews.map(({ _id, img, span, comment, stars }) => (
           <ReviewsComp key={_id} img={img} span={span} comment={comment} stars={stars} />

@@ -58,8 +58,8 @@ export const SecondPart = () => {
   }, []); // Le tableau vide assure que l'effet se déclenche une seule fois au montage
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="pt-14 ">
+    <div className="flex flex-col items-center ">
+      <div className="pt-14 w-full">
         <h2 className="font-ObviouslyNarrowBold" id="textBox">
           <div className="textSec"><span className="text">Y</span><span className="text">O</span><span className="text">U</span><span className="text">&apos;</span><span className="text">V</span><span className="text">E</span></div>
           <div className="textSec"><span className="text">N</span><span className="text">E</span><span className="text">V</span><span className="text">E</span><span className="text">R</span></div>
@@ -70,9 +70,10 @@ export const SecondPart = () => {
           <div className="textSec"><span className="text">H</span><span className="text">Y</span><span className="text">P</span><span className="text">E</span><span className="text">R</span></div>
           <div className="textSec"><span className="text">S</span><span className="text">P</span><span className="text">L</span><span className="text">A</span><span className="text">S</span><span className="text">H</span></div>
         </h2>
+
       </div>
 
-      <motion.div className="mt-7 p-5 border rounded-full bg-blue-300 shadow-xl"
+      <motion.div className="mt-7 p-7 border rounded-full bg-blue-300 shadow-xl"
        initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
       transition={{ duration: 1.3, ease: "easeOut" }}>
@@ -83,6 +84,10 @@ export const SecondPart = () => {
         <div className='pb-10'>
         <span className="text-5xl font-PolySansNeutral">&#8595; </span><span className="text-5xl font-ObviouslyNarrowBold underline glowing sha">BEST SELLERS</span><span className="text-5xl font-PolySansNeutral"> &#8595;</span>
         </div>
+        <motion.img
+          whileHover={{ rotate: 360 }}
+          className="h-24 absolute right-[278px] z-50" src="../images/stickers/bling-point-left.svg" alt="hand sticker" />
+        <img className="h-24 absolute left-[278px] scale-x-[-1] z-50" src="../images/stickers/bling-point-left.svg" alt="hand sticker" />
         <PopularList/>
       </div>
     </div>

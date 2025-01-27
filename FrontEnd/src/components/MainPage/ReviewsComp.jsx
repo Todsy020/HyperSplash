@@ -7,7 +7,7 @@ export const ReviewsComp = ({ img, span, comment, stars }) => {
           whileHover={{ scale: 1.05 }}
       >
       <div className="flex flex-col items-center justify-center h-96 p-10 bg-blue-300 shadow-xl shadow-blue-400 border rounded-2xl cursor-grab active:cursor-grabbing">
-        <img className="w-24" src={img} alt="profiles pictures" draggable="false"/>
+        <img className="w-24 h-24" src={img} alt="profiles pictures" draggable="false"/>
               <span className="text-center mt-8 mb-2 text-lg font-extrabold">{span}</span>
               <span className="mb-8 text-2xl">{stars}</span>
         <p className="text-center font-bold">{comment}</p>
